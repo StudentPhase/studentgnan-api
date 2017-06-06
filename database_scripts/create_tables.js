@@ -5,7 +5,20 @@ var entities = [{
     name: "Student",
     attributes: [
         "Id INT NOT NULL",
-        "Name VARCHAR(50) NOT NULL",
+        "Name VARCHAR(200) NOT NULL",
+        "PictureURL VARCHAR(200)",
+        "PhoneNumber VARCHAR(15)",
+        "College VARCHAR(100)",
+        "Course VARCHAR(100)",
+        "PassportNumber VARCHAR(10)",
+        "PassportImageURL VARCHAR(15)",
+        "VisaStartDate DATE",
+        "VisaEndDate DATE",
+        "VisaImageURL VARCHAR(200)",
+        "RegionalPermitStartDate DATE",
+        "RegionalPermitEndDate DATE",
+        "RegionalPermitImageURL VARCHAR(200)",
+        "StudentGnanId VARCHAR(10)",
         "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
     ]
