@@ -9,6 +9,7 @@ var entities = [{
         "PictureURL VARCHAR(200)",
         "PicturePublicId VARCHAR(100)",
         "PhoneNumber VARCHAR(15)",
+        "DateOfBirth Date",
         "College VARCHAR(100)",
         "Course VARCHAR(100)",
         "PassportNumber VARCHAR(10)",
@@ -40,7 +41,7 @@ function createTables() {
         var stmt = "CREATE TABLE IF NOT EXISTS " + entities[i].name + "(" + entities[i].attributes.join(", ") + ")ENGINE=INNODB";
         createStatements.push(stmt);
     }
-    connection.query(createStatements.join("; "), function (err, results) {
+    connection.query(createStatements.join("; "), function(err, results) {
         if (err) throw err;
         addData();
     });
