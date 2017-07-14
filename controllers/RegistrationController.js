@@ -39,7 +39,8 @@ module.exports = {
             res.send(result);
             return;
         } else {
-            cloudinary.uploader.upload(req.body.PassportImageUrl, function(success) {
+            cloudinary.uploader.upload(req.body.PassportImageBytes, function(success) {
+                delete req.body.PassportImageBytes;
                 req.body.PassportImageUrl = success.url;
                 req.body.PassportPublicId = success.public_id;
                 req.body.StudentGnanId = module.exports.getUniqueId();
