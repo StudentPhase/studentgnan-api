@@ -1,6 +1,7 @@
 'use strict';
 var statusCodes = require('./StatusCodesController.js');
 var database = require('../database_scripts/connection_string.js');
+var jwt = require('jsonwebtoken');
 
 module.exports = {
     loginStudent: function(req, res) {
