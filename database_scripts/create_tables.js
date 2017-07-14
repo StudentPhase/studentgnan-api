@@ -17,6 +17,7 @@ var entities = [{
         "PicturePublicId VARCHAR(100)",
         "StudentGnanId VARCHAR(10)",
         "Password VARCHAR(50)",
+        "DeviceId VARCHAR(200)",
         "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
     ]

@@ -13,11 +13,15 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
+//App Version
+process.env.AND_STUDENT_APP_VERSION = "1.0.0";
+
 //controller definitions
 var registrationController = require('./controllers/RegistrationController.js');
+var loginController = require('./controllers/LoginController.js');
 
 //non-secured routes
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
     res.send('StudentGnan, serving since 2017!!');
 });
 
@@ -27,6 +31,6 @@ app.post('/student', registrationController.addStudent);
 
 //server start
 var port = process.env.PORT || 5000;
-app.listen(port, function () {
+app.listen(port, function() {
     console.log('Node server started on port: ' + port);
 });

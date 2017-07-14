@@ -6,6 +6,12 @@ module.exports = {
     }, {
         "Code": "E002",
         "Message": "Please send all the required fields"
+    }, {
+        "Code": "E003",
+        "Message": "Invalid Phone Number or Password"
+    }, {
+        "Code": "E004",
+        "Message": "Please update the app to login"
     }],
     successCodes: [{
         "Code": "S001",
