@@ -13,6 +13,9 @@ app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
+//App Secret
+process.env.SECRET_KEY = 'studentgnan';
+
 //App Version
 process.env.AND_STUDENT_APP_VERSION = "1.0.0";
 
