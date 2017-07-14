@@ -28,6 +28,7 @@ app.get('/', function(req, res) {
 //API routes
 app.get('/student', registrationController.getAllRegistrations);
 app.post('/student', registrationController.addStudent);
+app.post('/studentLogin', loginController.loginStudent);
 
 //server start
 var port = process.env.PORT || 5000;
