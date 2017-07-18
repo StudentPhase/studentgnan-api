@@ -21,6 +21,16 @@ var entities = [{
         "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
     ]
+}, {
+    name: "EmergencyContact",
+    attributes: [
+        "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
+        "Name VARCHAR(200) NOT NULL",
+        "PhoneNumber VARCHAR(15)",
+        "Address VARCHAR(100)",
+        "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+        "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+    ]
 }];
 
 function addData() {
