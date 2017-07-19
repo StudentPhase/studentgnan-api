@@ -41,6 +41,7 @@ process.env.AND_STUDENT_APP_VERSION = "1.0.0";
 var registrationController = require('./controllers/RegistrationController.js');
 var loginController = require('./controllers/LoginController.js');
 var emergencyContactController = require('./controllers/EmergencyContactController.js');
+var categoryController = require('./controllers/CategoryController.js');
 
 //non-secured routes
 app.get('/', function(req, res) {
@@ -54,9 +55,13 @@ app.post('/studentLogin', loginController.loginStudent);
 //Authenticated Routes
 authenticatedRoutes.route('/student')
     .get(registrationController.getAllRegistrations);
+
 authenticatedRoutes.route('/emergencyContact')
     .get(emergencyContactController.getAllEmergencyContacts)
     .post(emergencyContactController.addEmergencyContact);
+
+authenticatedRoutes.route('/category')
+    .get(categoryController.getAllCategories);
 
 //server start
 var port = process.env.PORT || 5000;

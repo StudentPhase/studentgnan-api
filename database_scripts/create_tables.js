@@ -22,12 +22,48 @@ var entities = [{
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
     ]
 }, {
+    name: "Category",
+    attributes: [
+        "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
+        "Name VARCHAR(200) NOT NULL",
+        "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+        "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+    ]
+}, {
     name: "EmergencyContact",
     attributes: [
         "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
         "Name VARCHAR(200) NOT NULL",
         "PhoneNumber VARCHAR(15)",
         "Address VARCHAR(100)",
+        "Area VARCHAR(50)",
+        "CategoryId INT NOT NULL",
+        "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+        "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+        "FOREIGN KEY (CategoryId) REFERENCES Category(Id) ON DELETE CASCADE"
+    ]
+}, {
+    name: "Offer",
+    attributes: [
+        "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
+        "Title VARCHAR(200) NOT NULL",
+        "Description VARCHAR(1000) NOT NULL",
+        "VideoURL VARCHAR(100)",
+        "PhoneNumber VARCHAR(15)",
+        "Website VARCHAR(50)",
+        "Address VARCHAR(100)",
+        "CategoryId INT NOT NULL",
+        "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+        "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+        "FOREIGN KEY (CategoryId) REFERENCES Category(Id) ON DELETE CASCADE"
+    ]
+}, {
+    name: "OfferImage",
+    attributes: [
+        "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
+        "ImageURL VARCHAR(300)",
+        "ImagePublicId VARCHAR(50)",
+        "OfferId INT NOT NULL",
         "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
     ]
