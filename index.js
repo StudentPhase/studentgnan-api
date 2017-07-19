@@ -42,6 +42,7 @@ var registrationController = require('./controllers/RegistrationController.js');
 var loginController = require('./controllers/LoginController.js');
 var emergencyContactController = require('./controllers/EmergencyContactController.js');
 var categoryController = require('./controllers/CategoryController.js');
+var offerController = require('./controllers/OfferController.js');
 
 //non-secured routes
 app.get('/', function(req, res) {
@@ -62,6 +63,10 @@ authenticatedRoutes.route('/emergencyContact')
 
 authenticatedRoutes.route('/category')
     .get(categoryController.getAllCategories);
+
+authenticatedRoutes.route('/offer')
+    .get(offerController.getAllOffers)
+    .post(offerController.addOffer);
 
 //server start
 var port = process.env.PORT || 5000;

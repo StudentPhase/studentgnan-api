@@ -26,6 +26,8 @@ var entities = [{
     attributes: [
         "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
         "Name VARCHAR(200) NOT NULL",
+        "LogoURL VARCHAR(200)",
+        "LogoPublicId VARCHAR(50)",
         "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
     ]
@@ -46,8 +48,11 @@ var entities = [{
     name: "Offer",
     attributes: [
         "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
+        "OfferCode VARCHAR(30) NOT NULL",
         "Title VARCHAR(200) NOT NULL",
         "Description VARCHAR(1000) NOT NULL",
+        "ImageURL VARCHAR(300)",
+        "ImagePublicId VARCHAR(50)",
         "VideoURL VARCHAR(100)",
         "PhoneNumber VARCHAR(15)",
         "Website VARCHAR(50)",
@@ -56,16 +61,6 @@ var entities = [{
         "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
         "FOREIGN KEY (CategoryId) REFERENCES Category(Id) ON DELETE CASCADE"
-    ]
-}, {
-    name: "OfferImage",
-    attributes: [
-        "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
-        "ImageURL VARCHAR(300)",
-        "ImagePublicId VARCHAR(50)",
-        "OfferId INT NOT NULL",
-        "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
-        "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
     ]
 }];
 
