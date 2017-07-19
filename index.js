@@ -57,15 +57,17 @@ app.post('/studentLogin', loginController.loginStudent);
 authenticatedRoutes.route('/student')
     .get(registrationController.getAllRegistrations);
 
+authenticatedRoutes.route('/emergencyContact/:CategoryId')
+    .get(emergencyContactController.getAllEmergencyContacts);
 authenticatedRoutes.route('/emergencyContact')
-    .get(emergencyContactController.getAllEmergencyContacts)
     .post(emergencyContactController.addEmergencyContact);
 
 authenticatedRoutes.route('/category')
     .get(categoryController.getAllCategories);
 
+authenticatedRoutes.route('/offer/:CategoryId')
+    .get(offerController.getAllOffers);
 authenticatedRoutes.route('/offer')
-    .get(offerController.getAllOffers)
     .post(offerController.addOffer);
 
 //server start

@@ -5,7 +5,7 @@ var database = require('../database_scripts/connection_string.js');
 module.exports = {
     getAllOffers: function(req, res) {
         var result = {};
-        var queryString = 'SELECT * from Offer';
+        var queryString = 'SELECT * from Offer WHERE CategoryId = ' + req.params.CategoryId;
         database.connectionString.query(queryString, function(err, rows) {
             if (!err) {
                 if (rows.length == 0) {
