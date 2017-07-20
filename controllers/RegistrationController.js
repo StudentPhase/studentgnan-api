@@ -44,6 +44,7 @@ module.exports = {
                 req.body.PassportImageUrl = success.url;
                 req.body.PassportPublicId = success.public_id;
                 req.body.StudentGnanId = module.exports.getUniqueId();
+                req.body.Role = "STUDENT";
                 var queryString = 'INSERT INTO Student SET ?';
                 database.connectionString.query(queryString, req.body, function(err, rows) {
                     if (!err) {

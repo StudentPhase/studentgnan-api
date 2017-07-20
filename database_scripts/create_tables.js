@@ -6,6 +6,7 @@ var entities = [{
     attributes: [
         "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
         "Name VARCHAR(200) NOT NULL",
+        "Role VARCHAR(20)",
         "PhoneNumber VARCHAR(15)",
         "DateOfBirth Date",
         "College VARCHAR(100)",
