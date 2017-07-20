@@ -21,7 +21,7 @@ module.exports = {
                 if (!err2) {
                     if (rows2.length != 0) {
                         for (var i = 0; i < rows2.length; i++) {
-                            if (rows2[i].DeviceId != null) {
+                            if (rows2[i].DeviceId != 'null') {
                                 deviceIds.push(rows2[i].DeviceId);
                             }
                         }
@@ -41,12 +41,13 @@ module.exports = {
                         };
                         fcm.send(message, function(error, response) {
                             if (error) {
+                                console.log(error);
                                 result.Code = statusCodes.successCodes[0].Code;
                                 result.Message = statusCodes.successCodes[0].Message;
                                 result.Data = null;
                                 res.send(result);
                             } else {
-                                console.log(error);
+                                console.log('success');
                                 result.Code = statusCodes.successCodes[0].Code;
                                 result.Message = statusCodes.successCodes[0].Message;
                                 result.Data = null;
