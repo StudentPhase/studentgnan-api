@@ -6,7 +6,7 @@ var serverKey = 'AAAA6331WSI:APA91bHuCw_YhkcIkk73BLPzHBHvHB7Vih6zGleaxw3P7TpX4jn
 var fcm = new FCM(serverKey);
 
 module.exports = {
-    addOffer: function(req, res) {
+    customNotification: function(req, res) {
         var result = {};
         if (req.body.Title == "" || req.body.Description == "") {
             result.Code = statusCodes.errorCodes[1].Code;
