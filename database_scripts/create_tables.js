@@ -63,6 +63,19 @@ var entities = [{
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
         "FOREIGN KEY (CategoryId) REFERENCES Category(Id) ON DELETE CASCADE"
     ]
+}, {
+    name: "Notification",
+    attributes: [
+        "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
+        "Title VARCHAR(100) NOT NULL",
+        "Description VARCHAR(500) NOT NULL",
+        "ImageURL VARCHAR(100)",
+        "VideoURL VARCHAR(100)",
+        "NotificationCode VARCHAR(10)",
+        "ArticleId VARCHAR(10)",
+        "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+        "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+    ]
 }];
 
 function addData() {

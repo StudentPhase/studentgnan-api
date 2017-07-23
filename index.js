@@ -73,6 +73,8 @@ authenticatedRoutes.route('/offer')
 
 authenticatedRoutes.route('/customNotification')
     .post(notificationController.customNotification);
+authenticatedRoutes.route('/getAllNotifications')
+    .get(notificationController.getAllNotifications);
 
 //server start
 var port = process.env.PORT || 5000;
