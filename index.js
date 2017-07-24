@@ -45,6 +45,7 @@ var categoryController = require('./controllers/CategoryController.js');
 var offerController = require('./controllers/OfferController.js');
 var notificationController = require('./controllers/NotificationController.js');
 var studentController = require('./controllers/StudentController.js');
+var bannerController = require('./controllers/BannerController.js');
 
 //non-secured routes
 app.get('/', function(req, res) {
@@ -74,6 +75,9 @@ authenticatedRoutes.route('/emergencyContact')
 
 authenticatedRoutes.route('/category')
     .get(categoryController.getAllCategories);
+
+authenticatedRoutes.route('/bannerImage')
+    .get(bannerController.getAllBannerImages);
 
 authenticatedRoutes.route('/offer/:CategoryId')
     .get(offerController.getAllOffers);

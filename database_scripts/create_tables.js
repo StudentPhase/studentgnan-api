@@ -81,6 +81,14 @@ var entities = [{
         "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
     ]
+}, {
+    name: "BannerImages",
+    attributes: [
+        "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
+        "ImageURL VARCHAR(100) NOT NULL",
+        "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+        "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+    ]
 }];
 
 function addData() {
