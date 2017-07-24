@@ -63,6 +63,10 @@ authenticatedRoutes.route('/student/getById/:StudentId')
     .get(studentController.getStudentById);
 authenticatedRoutes.route('/student/updatePhoneNumber')
     .put(studentController.updatePhoneNumber);
+authenticatedRoutes.route('/student/updateAddress')
+    .put(studentController.updateAddress);
+authenticatedRoutes.route('/student/updateEmail')
+    .put(studentController.updateEmail);
 authenticatedRoutes.route('/student/updateDateOfBirth')
     .put(studentController.updateDateOfBirth);
 authenticatedRoutes.route('/student/resetPassword')
