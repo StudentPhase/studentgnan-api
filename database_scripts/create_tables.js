@@ -85,7 +85,7 @@ var entities = [{
     name: "BannerImages",
     attributes: [
         "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
-        "ImageURL VARCHAR(100) NOT NULL",
+        "ImageURL VARCHAR(100)",
         "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
     ]
