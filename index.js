@@ -87,6 +87,8 @@ authenticatedRoutes.route('/offer/:CategoryId')
     .get(offerController.getAllOffers);
 authenticatedRoutes.route('/offer')
     .post(offerController.addOffer);
+authenticatedRoutes.route('/sendOfferNotification')
+    .post(offerController.sendOfferNotification);
 
 authenticatedRoutes.route('/customNotification')
     .post(notificationController.customNotification);
