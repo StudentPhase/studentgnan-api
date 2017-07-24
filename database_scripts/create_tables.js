@@ -29,6 +29,7 @@ var entities = [{
     attributes: [
         "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
         "Name VARCHAR(200) NOT NULL",
+        "CategoryType VARCHAR(10) NOT NULL",
         "LogoURL VARCHAR(200)",
         "LogoPublicId VARCHAR(50)",
         "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
