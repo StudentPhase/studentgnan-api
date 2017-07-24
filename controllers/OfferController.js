@@ -61,7 +61,7 @@ module.exports = {
                                 if (!err2) {
                                     if (rows2.length != 0) {
                                         for (var i = 0; i < rows2.length; i++) {
-                                            if (rows2[i].DeviceId != null) {
+                                            if (rows2[i].DeviceId != null || rows2[i].DeviceId != 'null') {
                                                 deviceIds.push(rows2[i].DeviceId);
                                             }
                                         }
@@ -135,7 +135,7 @@ module.exports = {
                 if (!err2) {
                     if (rows2.length != 0) {
                         for (var i = 0; i < rows2.length; i++) {
-                            if (rows2[i].DeviceId != null) {
+                            if (rows2[i].DeviceId != null || rows2[i].DeviceId != 'null') {
                                 deviceIds.push(rows2[i].DeviceId);
                             }
                         }
