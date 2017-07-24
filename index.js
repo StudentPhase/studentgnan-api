@@ -60,6 +60,12 @@ authenticatedRoutes.route('/student')
     .get(studentController.getAllStudents);
 authenticatedRoutes.route('/student/getById/:StudentId')
     .get(studentController.getStudentById);
+authenticatedRoutes.route('/student/updatePhoneNumber')
+    .put(studentController.updatePhoneNumber);
+authenticatedRoutes.route('/student/updateDateOfBirth')
+    .put(studentController.updateDateOfBirth);
+authenticatedRoutes.route('/student/resetPassword')
+    .put(studentController.resetPassword);
 
 authenticatedRoutes.route('/emergencyContact/:CategoryId')
     .get(emergencyContactController.getAllEmergencyContacts);

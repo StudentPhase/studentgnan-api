@@ -45,5 +45,71 @@ module.exports = {
                 res.send(err);
             }
         });
+    },
+    updatePhoneNumber: function(req, res) {
+        var result = {};
+        if (req.body.PhoneNumber == "" || req.body.StudentId == "") {
+            result.Code = statusCodes.errorCodes[1].Code;
+            result.Message = statusCodes.errorCodes[1].Message;
+            result.Data = null;
+            res.send(result);
+            return;
+        } else {
+            var queryString = 'UPDATE Student SET PhoneNumber = ' + req.body.PhoneNumber + ' WHERE Id = ' + req.body.StudentId;
+            database.connectionString.query(queryString, function(err, rows) {
+                if (!err) {
+                    result.Code = statusCodes.successCodes[0].Code;
+                    result.Message = statusCodes.successCodes[0].Message;
+                    result.Data = rows;
+                    res.send(result);
+                } else {
+                    res.send(err);
+                }
+            });
+        }
+    },
+    updateDateOfBirth: function(req, res) {
+        var result = {};
+        if (req.body.DateOfBirth == "") {
+            result.Code = statusCodes.errorCodes[1].Code;
+            result.Message = statusCodes.errorCodes[1].Message;
+            result.Data = null;
+            res.send(result);
+            return;
+        } else {
+            var queryString = 'UPDATE Student SET DateOfBirth = "' + req.body.DateOfBirth + '" WHERE Id = ' + req.body.StudentId;
+            database.connectionString.query(queryString, function(err, rows) {
+                if (!err) {
+                    result.Code = statusCodes.successCodes[0].Code;
+                    result.Message = statusCodes.successCodes[0].Message;
+                    result.Data = rows;
+                    res.send(result);
+                } else {
+                    res.send(err);
+                }
+            });
+        }
+    },
+    resetPassword: function(req, res) {
+        var result = {};
+        if (req.body.StudentId == "" || req.body.PhoneNumber == "") {
+            result.Code = statusCodes.errorCodes[1].Code;
+            result.Message = statusCodes.errorCodes[1].Message;
+            result.Data = null;
+            res.send(result);
+            return;
+        } else {
+            var queryString = 'UPDATE Student SET Password = ' + req.body.PhoneNumber + ' WHERE Id = ' + req.body.StudentId;
+            database.connectionString.query(queryString, function(err, rows) {
+                if (!err) {
+                    result.Code = statusCodes.successCodes[0].Code;
+                    result.Message = statusCodes.successCodes[0].Message;
+                    result.Data = rows;
+                    res.send(result);
+                } else {
+                    res.send(err);
+                }
+            });
+        }
     }
 };
