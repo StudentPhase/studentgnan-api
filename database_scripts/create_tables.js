@@ -11,6 +11,8 @@ var entities = [{
         "DateOfBirth Date",
         "College VARCHAR(100)",
         "Course VARCHAR(100)",
+        "Address VARCHAR(150)",
+        "Email VARCHAR(50)",
         "PassportNumber VARCHAR(10)",
         "PassportImageURL VARCHAR(200)",
         "PassportPublicId VARCHAR(100)",
@@ -41,6 +43,8 @@ var entities = [{
         "Address VARCHAR(100)",
         "Area VARCHAR(50)",
         "CategoryId INT NOT NULL",
+        "ImageURL VARCHAR(300)",
+        "ImagePublicId VARCHAR(50)",
         "CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
         "UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
         "FOREIGN KEY (CategoryId) REFERENCES Category(Id) ON DELETE CASCADE"
