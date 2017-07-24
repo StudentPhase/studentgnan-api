@@ -5,7 +5,7 @@ var database = require('../database_scripts/connection_string.js');
 module.exports = {
     getAllBannerImages: function(req, res) {
         var result = {};
-        var queryString = 'SELECT * from BannerImages';
+        var queryString = 'SELECT * from BannerImages WHERE ImageURL IS NOT NULL';
         database.connectionString.query(queryString, function(err, rows) {
             if (!err) {
                 if (rows.length == 0) {
