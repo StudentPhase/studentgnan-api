@@ -163,7 +163,7 @@ module.exports = {
                                 result.Data = rows2;
                                 res.send(result);
                             } else {
-                                var queryString3 = 'INSERT INTO Notification(Id, Title, Description, ImageURL, VideoURL, NotificationCode, ArticleId) VALUES (null, "' + req.body.Title + '", "' + req.body.Description + '", "' + req.body.ImageURL + '", "' + req.body.VideoURL + '", "' + notificationController.notCodes[1] + '", ' + rows.insertId + ')';
+                                var queryString3 = 'INSERT INTO Notification(Id, Title, Description, ImageURL, VideoURL, NotificationCode, ArticleId) VALUES (null, "' + req.body.Title + '", "' + req.body.Description + '", "' + req.body.ImageURL + '", "' + req.body.VideoURL + '", "' + notificationController.notCodes[1] + '", ' + req.body.Id + ')';
                                 database.connectionString.query(queryString3, function(err3, rows3) {
                                     if (!err3) {
                                         result.Code = statusCodes.successCodes[0].Code;
