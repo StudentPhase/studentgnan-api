@@ -77,7 +77,7 @@ module.exports = {
             res.send(result);
             return;
         } else {
-            var queryString = 'UPDATE Student SET Email = ' + req.body.Email + ' WHERE Id = ' + req.body.StudentId;
+            var queryString = 'UPDATE Student SET Email = "' + req.body.Email + '" WHERE Id = ' + req.body.StudentId;
             database.connectionString.query(queryString, function(err, rows) {
                 if (!err) {
                     result.Code = statusCodes.successCodes[0].Code;
@@ -99,7 +99,7 @@ module.exports = {
             res.send(result);
             return;
         } else {
-            var queryString = 'UPDATE Student SET Address = ' + req.body.Address + ' WHERE Id = ' + req.body.StudentId;
+            var queryString = 'UPDATE Student SET Address = "' + req.body.Address + '" WHERE Id = ' + req.body.StudentId;
             database.connectionString.query(queryString, function(err, rows) {
                 if (!err) {
                     result.Code = statusCodes.successCodes[0].Code;
