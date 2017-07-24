@@ -44,6 +44,7 @@ var emergencyContactController = require('./controllers/EmergencyContactControll
 var categoryController = require('./controllers/CategoryController.js');
 var offerController = require('./controllers/OfferController.js');
 var notificationController = require('./controllers/NotificationController.js');
+var studentController = require('./controllers/StudentController.js');
 
 //non-secured routes
 app.get('/', function(req, res) {
@@ -56,7 +57,9 @@ app.post('/studentLogin', loginController.loginStudent);
 
 //Authenticated Routes
 authenticatedRoutes.route('/student')
-    .get(registrationController.getAllRegistrations);
+    .get(studentController.getAllStudents);
+authenticatedRoutes.route('/student/getById/:StudentId')
+    .get(studentController.getStudentById);
 
 authenticatedRoutes.route('/emergencyContact/:CategoryId')
     .get(emergencyContactController.getAllEmergencyContacts);

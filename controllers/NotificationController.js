@@ -9,7 +9,7 @@ var fcm = new FCM(serverKey);
 module.exports = {
     getAllNotifications: function(req, res) {
         var result = {};
-        var queryString = 'SELECT * from Notification';
+        var queryString = 'SELECT * FROM Notification';
         database.connectionString.query(queryString, function(err, rows) {
             if (!err) {
                 if (rows.length == 0) {
@@ -68,10 +68,9 @@ module.exports = {
                                 result.Data = null;
                                 res.send(result);
                             } else {
-                                var queryString3 = 'INSERT INTO Notification(Id, Title, Description, ImageURL, VideoURL, NotificationCode, ArticleId) VALUES (null, ' + req.body.Title + ', ' + req.body.Descriotion + ', null, null, ' + notificationControlller.notCodes[0] + ', null)';
-                                database.connectionString.query(queryString2, function(err3, rows3) {
+                                var queryString3 = 'INSERT INTO Notification(Id, Title, Description, ImageURL, VideoURL, NotificationCode, ArticleId) VALUES (null, "' + req.body.Title + '", "' + req.body.Description + '", null, null, "' + notificationControlller.notCodes[0] + '", null)';
+                                database.connectionString.query(queryString3, function(err3, rows3) {
                                     if (!err3) {
-                                        console.log('success');
                                         result.Code = statusCodes.successCodes[0].Code;
                                         result.Message = statusCodes.successCodes[0].Message;
                                         result.Data = rows3;
