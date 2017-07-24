@@ -1,8 +1,9 @@
 'use strict';
 var statusCodes = require('./StatusCodesController.js');
 var database = require('../database_scripts/connection_string.js');
-var fcm = require('fcm-push');
+var FCM = require('fcm-push');
 var serverKey = 'AAAA6331WSI:APA91bHuCw_YhkcIkk73BLPzHBHvHB7Vih6zGleaxw3P7TpX4jnaI0JCVgBgd-x-1p_3InhvOXi27Ywua91KFOMa9--ySLSHrk84GzQe9ysApi2a3Wx7pEn1PDQAFw_-kj-ftQuPb60y';
+var fcm = new FCM(serverKey);
 var cloudinary = require('cloudinary');
 cloudinary.config({
     cloud_name: 'studentphase',
