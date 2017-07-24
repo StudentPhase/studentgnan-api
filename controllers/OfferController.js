@@ -160,7 +160,7 @@ module.exports = {
                             if (error) {
                                 result.Code = statusCodes.successCodes[0].Code;
                                 result.Message = statusCodes.successCodes[0].Message;
-                                result.Data = rows;
+                                result.Data = rows2;
                                 res.send(result);
                             } else {
                                 var queryString3 = 'INSERT INTO Notification(Id, Title, Description, ImageURL, VideoURL, NotificationCode, ArticleId) VALUES (null, "' + req.body.Title + '", "' + req.body.Description + '", "' + req.body.ImageURL + '", "' + req.body.VideoURL + '", "' + notificationController.notCodes[1] + '", ' + rows.insertId + ')';
@@ -179,7 +179,7 @@ module.exports = {
                     } else {
                         result.Code = statusCodes.successCodes[0].Code;
                         result.Message = statusCodes.successCodes[0].Message;
-                        result.Data = rows;
+                        result.Data = rows2;
                         res.send(result);
                     }
                 } else {
