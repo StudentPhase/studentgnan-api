@@ -1,7 +1,7 @@
 'use strict';
 var statusCodes = require('./StatusCodesController.js');
 var database = require('../database_scripts/connection_string.js');
-var notificationControlller = require('./NotificationCodesController.js');
+var notificationController = require('./NotificationCodesController.js');
 var FCM = require('fcm-push');
 var serverKey = 'AAAA6331WSI:APA91bHuCw_YhkcIkk73BLPzHBHvHB7Vih6zGleaxw3P7TpX4jnaI0JCVgBgd-x-1p_3InhvOXi27Ywua91KFOMa9--ySLSHrk84GzQe9ysApi2a3Wx7pEn1PDQAFw_-kj-ftQuPb60y';
 var fcm = new FCM(serverKey);
@@ -68,7 +68,7 @@ module.exports = {
                                 result.Data = null;
                                 res.send(result);
                             } else {
-                                var queryString3 = 'INSERT INTO Notification(Id, Title, Description, ImageURL, VideoURL, NotificationCode, ArticleId) VALUES (null, "' + req.body.Title + '", "' + req.body.Description + '", null, null, "' + notificationControlller.notCodes[0] + '", null)';
+                                var queryString3 = 'INSERT INTO Notification(Id, Title, Description, ImageURL, VideoURL, NotificationCode, ArticleId) VALUES (null, "' + req.body.Title + '", "' + req.body.Description + '", null, null, "' + notificationController.notCodes[0] + '", null)';
                                 database.connectionString.query(queryString3, function(err3, rows3) {
                                     if (!err3) {
                                         result.Code = statusCodes.successCodes[0].Code;

@@ -1,6 +1,7 @@
 'use strict';
 var statusCodes = require('./StatusCodesController.js');
 var database = require('../database_scripts/connection_string.js');
+var notificationController = require('./NotificationCodesController.js');
 var FCM = require('fcm-push');
 var serverKey = 'AAAA6331WSI:APA91bHuCw_YhkcIkk73BLPzHBHvHB7Vih6zGleaxw3P7TpX4jnaI0JCVgBgd-x-1p_3InhvOXi27Ywua91KFOMa9--ySLSHrk84GzQe9ysApi2a3Wx7pEn1PDQAFw_-kj-ftQuPb60y';
 var fcm = new FCM(serverKey);
@@ -88,11 +89,17 @@ module.exports = {
                                                 result.Data = rows;
                                                 res.send(result);
                                             } else {
-                                                console.log(error);
-                                                result.Code = statusCodes.successCodes[0].Code;
-                                                result.Message = statusCodes.successCodes[0].Message;
-                                                result.Data = rows;
-                                                res.send(result);
+                                                var queryString3 = 'INSERT INTO Notification(Id, Title, Description, ImageURL, VideoURL, NotificationCode, ArticleId) VALUES (null, "' + req.body.Title + '", "' + req.body.Description + '", "' + req.body.ImageURL + '", "' + req.body.VideoURL + '", "' + notificationControlller.notCodes[1] + '", ' + rows.insertId + ')';
+                                                database.connectionString.query(queryString3, function(err3, rows3) {
+                                                    if (!err3) {
+                                                        result.Code = statusCodes.successCodes[0].Code;
+                                                        result.Message = statusCodes.successCodes[0].Message;
+                                                        result.Data = rows3;
+                                                        res.send(result);
+                                                    } else {
+                                                        res.send(err3);
+                                                    }
+                                                });
                                             }
                                         });
                                     } else {
@@ -145,16 +152,7 @@ module.exports = {
                                 click_action: "FCM_PLUGIN_ACTIVITY"
                             },
                             data: { //you can send only notification or only data(or include both)
-                                Id: req.body.Id,
-                                OfferCode: req.body.OfferCode,
-                                Title: req.body.Title,
-                                Description: req.body.Description,
-                                ImageURL: req.body.ImageURL,
-                                VideoURL: req.body.VideoURL,
-                                PhoneNumber: req.body.PhoneNumber,
-                                Website: req.body.Website,
-                                Address: req.body.Address,
-                                CategoryId: req.body.CategoryId
+                                Id: req.body.Id
                             },
                             priority: "high"
                         };
@@ -165,11 +163,17 @@ module.exports = {
                                 result.Data = rows;
                                 res.send(result);
                             } else {
-                                console.log(error);
-                                result.Code = statusCodes.successCodes[0].Code;
-                                result.Message = statusCodes.successCodes[0].Message;
-                                result.Data = rows;
-                                res.send(result);
+                                var queryString3 = 'INSERT INTO Notification(Id, Title, Description, ImageURL, VideoURL, NotificationCode, ArticleId) VALUES (null, "' + req.body.Title + '", "' + req.body.Description + '", "' + req.body.ImageURL + '", "' + req.body.VideoURL + '", "' + notificationControlller.notCodes[1] + '", ' + rows.insertId + ')';
+                                database.connectionString.query(queryString3, function(err3, rows3) {
+                                    if (!err3) {
+                                        result.Code = statusCodes.successCodes[0].Code;
+                                        result.Message = statusCodes.successCodes[0].Message;
+                                        result.Data = rows3;
+                                        res.send(result);
+                                    } else {
+                                        res.send(err3);
+                                    }
+                                });
                             }
                         });
                     } else {
