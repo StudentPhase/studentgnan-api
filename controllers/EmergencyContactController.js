@@ -61,5 +61,25 @@ module.exports = {
                 });
             });
         }
+    },
+    deleteEmergencyContacts: function(req, res) {
+        var result = {};
+        var queryString = 'DELETE from EmergencyContact WHERE Id = ' + req.params.ContactId;
+        database.connectionString.query(queryString, function(err, rows) {
+            if (!err) {
+                if (rows.length == 0) {
+                    result.Code = statusCodes.errorCodes[0].Code;
+                    result.Message = statusCodes.errorCodes[0].Message;
+                    result.Data = null;
+                } else {
+                    result.Code = statusCodes.successCodes[0].Code;
+                    result.Message = statusCodes.successCodes[0].Message;
+                    result.Data = rows;
+                }
+                res.send(result);
+            } else {
+                res.send(err);
+            }
+        });
     }
 };

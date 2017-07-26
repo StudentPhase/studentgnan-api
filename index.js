@@ -75,7 +75,8 @@ authenticatedRoutes.route('/student/resetPassword')
 authenticatedRoutes.route('/emergencyContact/:CategoryId')
     .get(emergencyContactController.getAllEmergencyContacts);
 authenticatedRoutes.route('/emergencyContact')
-    .post(emergencyContactController.addEmergencyContact);
+    .post(emergencyContactController.addEmergencyContact)
+    .delete(emergencyContactController.deleteEmergencyContacts);
 
 authenticatedRoutes.route('/category')
     .get(categoryController.getAllCategories);
