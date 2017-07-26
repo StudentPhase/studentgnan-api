@@ -64,7 +64,7 @@ module.exports = {
     },
     deleteEmergencyContacts: function(req, res) {
         var result = {};
-        var queryString = 'DELETE from EmergencyContact WHERE Id = ' + req.params.ContactId;
+        var queryString = 'DELETE from EmergencyContact WHERE Id = ' + req.body.Id;
         database.connectionString.query(queryString, function(err, rows) {
             if (!err) {
                 if (rows.length == 0) {
