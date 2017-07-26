@@ -54,7 +54,7 @@ var entities = [{
     name: "Offer",
     attributes: [
         "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY",
-        "OfferCode VARCHAR(30) NOT NULL",
+        "OfferCode VARCHAR(30)",
         "Title VARCHAR(200) NOT NULL",
         "Description VARCHAR(1000) NOT NULL",
         "ImageURL VARCHAR(300)",
