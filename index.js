@@ -58,7 +58,8 @@ app.post('/studentLogin', loginController.loginStudent);
 
 //Authenticated Routes
 authenticatedRoutes.route('/student')
-    .get(studentController.getAllStudents);
+    .get(studentController.getAllStudents)
+    .delete(studentController.deleteStudent);
 authenticatedRoutes.route('/student/getById/:StudentId')
     .get(studentController.getStudentById);
 authenticatedRoutes.route('/student/updatePhoneNumber')
