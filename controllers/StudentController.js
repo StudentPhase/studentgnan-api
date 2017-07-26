@@ -156,7 +156,7 @@ module.exports = {
             });
         }
     },
-    deleteEmergencyContacts: function(req, res) {
+    deleteStudent: function(req, res) {
         var result = {};
         var queryString = 'DELETE from Student WHERE Id = ' + req.body.Id;
         database.connectionString.query(queryString, function(err, rows) {
