@@ -187,5 +187,26 @@ module.exports = {
                 }
             });
         }
+    },
+    deleteOffer: function(req, res) {
+        var result = {};
+        var queryString = 'DELETE from Offer WHERE Id = ' + req.body.Id;
+        database.connectionString.query(queryString, function(err, rows) {
+            if (!err) {
+                var queryString2 = 'DELETE from Notification WHERE ArticleId = ' + req.body.Id;
+                database.connectionString.query(queryString2, function(err2, rows2) {
+                    if (!err2) {
+                        result.Code = statusCodes.successCodes[0].Code;
+                        result.Message = statusCodes.successCodes[0].Message;
+                        result.Data = rows;
+                        res.send(result);
+                    } else {
+                        res.send(err2);
+                    }
+                });
+            } else {
+                res.send(err);
+            }
+        });
     }
 };
