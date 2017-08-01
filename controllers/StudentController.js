@@ -201,8 +201,8 @@ module.exports = {
                             }
                         });
                     } else {
-                        result.Code = statusCodes.errorCodes[3].Code;
-                        result.Message = statusCodes.errorCodes[3].Message;
+                        result.Code = statusCodes.errorCodes[4].Code;
+                        result.Message = statusCodes.errorCodes[4].Message;
                         result.Data = null;
                         res.send(result);
                         return;

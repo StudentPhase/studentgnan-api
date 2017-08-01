@@ -12,6 +12,9 @@ module.exports = {
     }, {
         "Code": "E004",
         "Message": "Please update the app to login"
+    }, {
+        "Code": "E005",
+        "Message": "Invalid current password"
     }],
     successCodes: [{
         "Code": "S001",
