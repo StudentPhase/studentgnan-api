@@ -72,6 +72,8 @@ authenticatedRoutes.route('/student/updateDateOfBirth')
     .put(studentController.updateDateOfBirth);
 authenticatedRoutes.route('/student/resetPassword')
     .put(studentController.resetPassword);
+authenticatedRoutes.route('/changeStudentPassword')
+    .put(studentController.changeStudentPassword);
 
 authenticatedRoutes.route('/emergencyContact/:CategoryId')
     .get(emergencyContactController.getAllEmergencyContacts);
