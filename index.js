@@ -88,6 +88,8 @@ authenticatedRoutes.route('/bannerImage')
 authenticatedRoutes.route('/offer/:CategoryId')
     .get(offerController.getAllOffers);
 authenticatedRoutes.route('/offer')
+    .get(offerController.getAllAvailableOffers);
+authenticatedRoutes.route('/offer')
     .post(offerController.addOffer)
     .delete(offerController.deleteOffer);
 authenticatedRoutes.route('/sendOfferNotification')
