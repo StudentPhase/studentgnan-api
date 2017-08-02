@@ -35,7 +35,7 @@ authenticatedRoutes.use(function(req, res, next) {
 process.env.SECRET_KEY = 'studentgnan';
 
 //App Version
-process.env.AND_STUDENT_APP_VERSION = "1.0.1";
+process.env.AND_STUDENT_APP_VERSION = "1.0.2";
 
 //controller definitions
 var registrationController = require('./controllers/RegistrationController.js');
